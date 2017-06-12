@@ -1,0 +1,62 @@
+<ion-header>
+	<ion-navbar primary>
+		<ion-title>Demo One</ion-title>
+		<ion-buttons end (click)="edit()">
+			<button royal>Edit</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="profile" *ngIf="profile">
+
+	<ion-row padding-top>
+		<ion-col width-50 offset-25>
+			<img src="img/placeholder-male.png">
+		</ion-col>
+	</ion-row>
+	<header padding class="profile__header">
+		<h3>{{ profile.name }}</h3>
+		<h5 *ngIf="profile.company">{{ profile.company.position }}, {{ profile.company.name }}</h5>
+	</header>
+
+	<ion-list>
+		<ion-list-header>
+			<ion-icon name="pin-outline" item-left></ion-icon> Office
+		</ion-list-header>
+		<ion-item>
+			<p *ngIf="profile.company.address">{{profile.company.address.address_1 }}<br>{{profile.company.address.address_2 }}<br>{{profile.company.address.city }}, {{profile.company.address.state }} {{profile.company.address.zip }}<br>{{profile.company.address.country }}</p>
+			<button clear small no-padding>View on Maps</button>
+			<ion-thumbnail item-right>
+				<img [src]="profile.company.thumbnail">
+			</ion-thumbnail>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			<ion-icon name="color-wand" item-left></ion-icon> {{ profile.name }}
+		</ion-list-header>
+		<ion-item>
+			<p>{{ profile.about }}</p>
+		</ion-item>
+	</ion-list>
+
+	<ion-list>
+		<ion-list-header>
+			<ion-icon name="videocam" item-left></ion-icon> Video
+		</ion-list-header>
+		<ion-item>
+			<button primary clear><ion-icon name="add"></ion-icon> Add Video </button>
+		</ion-item>
+		
+	</ion-list>
+	<ion-list>
+		<ion-list-header>
+			<ion-icon name="bookmarks" item-left></ion-icon> {{ profile.company.name }} Bio
+		</ion-list-header>
+		<ion-item>
+			<p>{{ profile.company.about }}</p>
+		</ion-item>
+	</ion-list>
+	
+</ion-content>

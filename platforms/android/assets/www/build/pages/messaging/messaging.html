@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Messaging</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+  <ion-list>
+	  <ion-item *ngFor="let message of messages" (click)="showMessage()">
+	    <ion-avatar item-left>
+	      <img src="{{ message.thumbnail }}">
+	    </ion-avatar>
+	    <h2>{{ message.name }}</h2>
+	    <p>{{ message.snippet }}</p>
+	    <p item-right>{{ message.date }}</p>
+	  </ion-item>
+	</ion-list>
+</ion-content>

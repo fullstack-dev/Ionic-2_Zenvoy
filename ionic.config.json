@@ -1,0 +1,12 @@
+{
+  "name": "Zenvoy",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+  	{
+  		"path": "/api/v2",
+  		"proxyUrl": "local.zenvoy.net:8888"
+  	}
+  ]
+}

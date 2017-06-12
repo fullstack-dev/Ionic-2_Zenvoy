@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>Intros</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="intros">
+  <div *ngIf="intros">
+    <div *ngFor="let intro of intros">
+      <div text-center padding-top>{{ intro.created_at }}</div>
+      <ion-card>
+        <div padding>
+          <h5>Alicia, meet...</h5>
+        </div>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="img/placeholder-male.png">
+          </ion-avatar>
+          <h2>{{ intro.name }}</h2>
+          <h3>{{ intro.company.position }}, <small>{{ intro.company.name }}</small></h3>
+          <p *ngFor="let industry of intro.industries">{{ industry }}</p>
+        </ion-item>
+        <div padding>
+          <button favorite block small (click)="showFeedbackModal()">Provide Feedback</button>
+          <button primary outline block small (click)="showAlreadyKnowModal()">Already Know Damian?</button>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+  <div *ngIf="(intros | json) != '{}'">
+    <ion-card>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="img/placeholder-male.png">
+        </ion-avatar>
+        <h5>Stay tuned, your next introduction is on its way!</h5>
+        <p>Zenvoy Team</p>
+      </ion-item>
+      <div padding>
+      <p>We’re hard at work finding you a great intro.</p>
+      <br>
+      <p>Once you receive a new introduction, Zenvoy will inform you via email.</p>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

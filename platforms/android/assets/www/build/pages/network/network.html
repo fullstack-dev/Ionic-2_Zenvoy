@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      Network
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div  *ngFor="let network of networks">
+    <p text-center>April 11</p>
+    <ion-card>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="{{ network.thumbnail }}">
+        </ion-thumbnail>
+        <h2>{{ network.name }}</h2>
+        <p>{{ network.company.name }}, {{ network.company.position }}</p>
+        <button btn outline primary small>Download vCard</button>
+      </ion-item>
+      <ul>
+        <li *ngFor="let industry of network.industries">{{ industry }}</li>
+      </ul>
+      <div padding>
+        <button btn primary small block (click)="viewProfile(network.id)">View Details</button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

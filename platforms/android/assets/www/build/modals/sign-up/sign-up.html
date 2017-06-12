@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-navbar primary>
+		<ion-buttons start (click)="cancel()">
+			<button>Cancel</button>
+		</ion-buttons>
+		<ion-title>
+			Sign-up
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-item>
+		    <ion-input type="text" name="email" [(ngModel)]="user.email" clearInput placeholder="Enter your work email"></ion-input>
+		</ion-item>
+		<ion-item>
+		    <ion-input type="password" name="password" [(ngModel)]="user.password" clearInput placeholder="Password"></ion-input>
+		</ion-item>
+	</ion-list>
+	<div padding text-center>
+		<button secondary block (click)="submit(user)">Ok, I'm ready to go!</button>
+		<p>By proceeding to create your profile and use Zenvoy you are agreeing to our <a (click)="openUrl('https://www.zenvoy.com/terms-conditions')">Terms &amp; Conditions</a>, if you do not agree then you can't use Zenvoy.</p>
+	</div>
+</ion-content> 

@@ -1,0 +1,77 @@
+<ion-header>
+	<ion-navbar primary>
+		<ion-title>
+			Updates
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="updates">
+	<ion-card *ngFor="let update of updates">
+		<div [ngSwitch]="update.object">
+			
+			<!-- Community -->
+			<div *ngSwitchCase="'joined_community'">
+				<ion-item>
+					<ion-avatar item-left>
+						<img [src]="update.thumbnail">
+					</ion-avatar>
+					<h2>{{ update.subject.name }}, you have joined {{ update.actor.name }}</h2>
+					<p>{{ update.date }}</p>
+				</ion-item>
+				<ion-card-content>
+					<p>{{ update.actor.description }}</p>
+				</ion-card-content>
+			</div>
+
+			<!-- Message -->
+			<div *ngSwitchCase="'new_message'">
+				<ion-item>
+					<ion-avatar item-left>
+						<img [src]="update.thumbnail">
+					</ion-avatar>
+					<h2>{{ update.subject.name }}, you have a new message from {{ update.actor.name }}</h2>
+				</ion-item>
+			</div>
+
+			<div *ngSwitchCase="'new_intro'">
+				<ion-item>
+					<ion-avatar item-left>
+						<img [src]="update.thumbnail">
+					</ion-avatar>
+					<h2>{{ update.subject.name }}, meet {{ update.actor.name }}</h2>
+					<p>{{ update.date }}</p>
+				</ion-item>
+				<ion-card-content>
+					<p>Your next Zenvoy introduction.</p>
+					<button primary block small (click)="viewProfile()">View profile</button>
+					<p>Take some time to familiarize yourself with your new introduction's profile and company. When you're ready, reach out to schedule that quick call or get together. Remember, they're expecting you!</p>
+				</ion-card-content>
+			</div>
+			<div *ngSwitchCase="'submit_feedback'">
+				<ion-item>
+					<ion-avatar item-left>
+						<img [src]="update.thumbnail">
+					</ion-avatar>
+					<h2>{{ update.subject.name }}, submit your review for {{ update.actor.name }}</h2>
+					<p>{{ update.date }}</p>
+				</ion-item>
+				<ion-card-content>
+					<p>Tell us what you thought of your introduction.</p>
+					<button favorite block small (click)="provideFeedback()">Provide Feedback?</button>
+					<p>By filling out the quick questionnaire you help set the tone for your future Zenvoy introductions. Don't worry, your answers will not be visible to anyone but you.</p>
+					<br>
+				</ion-card-content>
+			</div>
+			<div *ngSwitchDefault>
+				<ion-item>
+					<ion-avatar item-left>
+						<img [src]="update.thumbnail">
+					</ion-avatar>
+					<h2>You have submitted a review for {{ update.actor.name }}</h2>
+					<p>{{ update.date }}</p>
+				</ion-item>
+			</div>
+		</div>
+	</ion-card>
+</ion-content>

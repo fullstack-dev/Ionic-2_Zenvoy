@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-navbar primary>
+		<ion-buttons start (click)="cancel()">
+			<button royal>Cancel</button>
+		</ion-buttons>
+		<ion-title>Edit Profile</ion-title>
+		<ion-buttons end (click)="save()">
+			<button royal>Save</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item>
+			<ion-label>Prefix</ion-label>
+			<ion-select [(ngModel)]="gaming">
+				<ion-option value="Mr">Mr.</ion-option>
+				<ion-option value="Ms">Ms.</ion-option>
+				<ion-option value="Mrs">Mrs.</ion-option>
+				<ion-option value="Dr">Dr.</ion-option>
+				<ion-option value="Prof">Prof.</ion-option>
+			</ion-select>
+		</ion-item>
+
+		<ion-item>
+			<ion-label inset>First Name</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label inset>Middle Initial</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label inset>Last Name</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label inset>Title</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label inset>Suffix</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label inset>Nickname</ion-label>
+			<ion-input type="text" value=""></ion-input>
+		</ion-item>
+	</ion-list>
+	<div padding text-center>
+		<p>To edit all your data, please log in to Zenvoy.com on a tablet or desktop.</p>
+	</div>
+</ion-content>

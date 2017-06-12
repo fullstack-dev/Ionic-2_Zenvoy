@@ -1,0 +1,59 @@
+[
+	{
+		"id": 1,
+		"created_at": "April 10, 2016",
+		"member_id": 2,
+		"name": "Damian Winger",
+		"email": "demo_2@citronworks.net",
+		"company": {
+			"name": "Demo",
+			"position": "CEO"
+		},
+		"industries": [
+			"Consulting"
+		]
+	},
+	{
+		"id": 2,
+		"created_at": "April 9, 2016",
+		"member_id": 3,
+		"name": "Demo Three Sykes",
+		"email": "demo_3@citronworks.net",
+		"company": {
+			"name": "Demo",
+			"position": "Application Developer"
+		},
+		"industries": [
+			"Management Consulting"
+		]
+	},
+	{
+		"id": 3,
+		"created_at": "April 8, 2016",
+		"member_id": 5,
+		"name": "Demo Five Whitehouse",
+		"email": "demo_5@citronworks.net",
+		"company": {
+			"name": "Demo Three Company",
+			"position": "Project Manager"
+		},
+		"industries": [
+			"Residential Development"
+		]
+	},
+	{
+		"id": 3,
+		"created_at": "April 7, 2016",
+		"member_id": 6328,
+		"name": "Milner Maramo",
+		"email": "klinsd@citronworks.net",
+		"company": {
+			"name": "Zenvoy, LLC",
+			"position": "Management Assistant"
+		},
+		"industries": [
+			"Branding",
+			"Event"
+		]
+	}
+]

@@ -1,0 +1,27 @@
+<ion-content class="login">
+	<div padding text-center>
+		<img src="img/logo-zenvoy-white.png" srcset="img/logo-zenvoy-white.png 1x, img/logo-zenvoy-white@2x.png 2x">
+	</div>
+	<ion-list>
+	  <ion-item>
+	    <ion-input type="text" [(ngModel)]="user.email" name="email" clearInput placeholder="Enter your work email"></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-input type="password" [(ngModel)]="user.password" clearInput placeholder="Password"></ion-input>
+	  </ion-item>
+	</ion-list>
+	<div padding text-center>
+		<button class="xbold" secondary block (click)="login(user)">Log me in!</button>
+		<p hidden>or</p>
+		<button hidden primary block>Log In using LinkedIn</button>
+		<br>
+		<ion-row>
+			<ion-col>
+				<a class="xbold" clear block (click)="showForgotPassModal()">Forgot your Password?</a>
+			</ion-col>
+			<ion-col>
+				<a class="xbold" clear block (click)="showSignUpModal()">Sign up instead?</a>
+			</ion-col>
+		</ion-row>
+	</div>
+</ion-content>
